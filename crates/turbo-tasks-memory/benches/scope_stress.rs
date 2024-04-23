@@ -1,5 +1,5 @@
 use anyhow::Result;
-use criterion::{BenchmarkId, Criterion};
+use codspeed_criterion_compat::{BenchmarkId, Criterion};
 use turbo_tasks::{Completion, TryJoinIterExt, TurboTasks, Vc};
 use turbo_tasks_memory::MemoryBackend;
 
@@ -19,7 +19,7 @@ pub fn scope_stress(c: &mut Criterion) {
     group.sample_size(20);
 
     for size in [5, 10, 15, 20, 25, 30, 100, 200, 300] {
-        group.throughput(criterion::Throughput::Elements(
+        group.throughput(codspeed_criterion_compat::Throughput::Elements(
             /* tasks for fib from 0 to size - 1 = */
             (size as u64) * (size as u64) +
             /* root tasks = */
