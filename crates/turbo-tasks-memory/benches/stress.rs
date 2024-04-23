@@ -1,5 +1,5 @@
 use anyhow::Result;
-use criterion::{BenchmarkId, Criterion};
+use codspeed_criterion_compat::{BenchmarkId, Criterion};
 use turbo_tasks::{TryJoinIterExt, TurboTasks, Vc};
 use turbo_tasks_memory::MemoryBackend;
 
@@ -19,7 +19,7 @@ pub fn fibonacci(c: &mut Criterion) {
     group.sample_size(20);
 
     for size in [100, 200, 500, 1000, 1414] {
-        group.throughput(criterion::Throughput::Elements(
+        group.throughput(codspeed_criterion_compat::Throughput::Elements(
             /* tasks for fib from 0 to size - 1 = */
             size as u64 * (size as u64 + 1) / 2 +
             /* root task = */

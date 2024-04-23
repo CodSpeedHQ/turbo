@@ -32,6 +32,7 @@ turbo-tasks-hash = { workspace = true }
 turbo-tasks-malloc = { workspace = true, default-features = false }
 
 [dev-dependencies]
+codspeed-criterion-compat = { workspace = true, features = ["async_tokio"] }
 criterion = { workspace = true, features = ["async_tokio"] }
 indexmap = { workspace = true }
 lazy_static = { workspace = true }

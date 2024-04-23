@@ -1562,6 +1562,30 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "67ba02a97a2bd10f4b59b25c7973101c79642302776489e030cd13cdab09ed15"
 
 [[package]]
+name = "codspeed"
+version = "2.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "735f16ee0fc63cb90596cd7b57ce481522adfe1714f95bc04a94d4f4b0a06a6d"
+dependencies = [
+ "colored",
+ "libc",
+ "serde_json",
+]
+
+[[package]]
+name = "codspeed-criterion-compat"
+version = "2.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "572ca9c8ad460591b40aad63c99d6746aa3c532f979175344eb015389499860c"
+dependencies = [
+ "codspeed",
+ "colored",
+ "criterion 0.5.1",
+ "futures 0.3.30",
+ "tokio",
+]
+
+[[package]]
 name = "color_quant"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1572,6 +1596,16 @@ name = "colorchoice"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7"
+
+[[package]]
+name = "colored"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cbf2150cce219b664a8a70df7a1f933836724b503f8a413af9365b4dcc4d90b8"
+dependencies = [
+ "lazy_static",
+ "windows-sys 0.48.0",
+]
 
 [[package]]
 name = "combine"
@@ -2008,6 +2042,34 @@ dependencies = [
  "itertools 0.10.5",
  "lazy_static",
  "num-traits",
+ "oorandom",
+ "plotters",
+ "rayon",
+ "regex",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "tinytemplate",
+ "tokio",
+ "walkdir",
+]
+
+[[package]]
+name = "criterion"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f2b12d017a929603d80db1831cd3a24082f8137ce19c69e6447f54f5fc8d692f"
+dependencies = [
+ "anes",
+ "cast",
+ "ciborium",
+ "clap 4.5.2",
+ "criterion-plot",
+ "futures 0.3.30",
+ "is-terminal",
+ "itertools 0.10.5",
+ "num-traits",
+ "once_cell",
  "oorandom",
  "plotters",
  "rayon",
@@ -10614,8 +10676,9 @@ dependencies = [
  "auto-hash-map",
  "bitflags 1.3.2",
  "bytes 1.5.0",
+ "codspeed-criterion-compat",
  "concurrent-queue",
- "criterion",
+ "criterion 0.4.0",
  "dashmap",
  "dunce",
  "futures 0.3.30",
@@ -10701,8 +10764,9 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "auto-hash-map",
+ "codspeed-criterion-compat",
  "concurrent-queue",
- "criterion",
+ "criterion 0.4.0",
  "dashmap",
  "indexmap 1.9.3",
  "lazy_static",
@@ -10755,7 +10819,8 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "async-recursion",
- "criterion",
+ "codspeed-criterion-compat",
+ "criterion 0.4.0",
  "difference",
  "futures 0.3.30",
  "indexmap 1.9.3",
@@ -10791,7 +10856,8 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "chromiumoxide",
- "criterion",
+ "codspeed-criterion-compat",
+ "criterion 0.4.0",
  "futures 0.3.30",
  "nix 0.26.2",
  "once_cell",
@@ -10890,8 +10956,9 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "clap 4.5.2",
+ "codspeed-criterion-compat",
  "console-subscriber",
- "criterion",
+ "criterion 0.4.0",
  "dunce",
  "futures 0.3.30",
  "mime 0.3.17",
@@ -11051,7 +11118,8 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "async-trait",
- "criterion",
+ "codspeed-criterion-compat",
+ "criterion 0.4.0",
  "either",
  "indexmap 1.9.3",
  "indoc",
